@@ -1,0 +1,177 @@
+/* Set responsive styles */
+@media only screen and (max-width: 600px) {
+  /* Layout */
+  body {
+    margin: 30px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  input,
+  select {
+    margin-bottom: 10px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 2400px) {
+  /* Layout */
+  body {
+    margin: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Layout */
+  body {
+    margin: 50px;
+  }
+}
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background color */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Center the page */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the form */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+/* The headings for the inputs */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Typeing in the boxes */
+input,
+select {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Fill out Gender */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+fieldset label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+fieldset label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+.regular-radio:checked + label:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  background-color: #00a651;
+  border-radius: 50%;
+}
+.regular-radio:not(:checked) + label:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+
+/* Submit Button and Hover */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the accordion down at the bottom of the page */
+.accordion {
+  margin-top: 20px;
+}
+.accordion-button {
+  background-color: #fff;
+  color: #4caf50;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.accordion-button:hover {
+  background-color: #f2f2f2;
+}
+.accordion-panel {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  display: none;
+}
+.accordion-panel.show {
+  display: block;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale1.0" />
+    <title>School Form</title>
+    <link rel="stylesheet" href="css/style2.css" />
+    <!--Shelby Cochrane-->
+    <!--School Request Form. Fill out the form, you can't submit unless you fill out every field. Once submitted a pop up appears stating that the form has been submitted. There is also an accordion at the bottom that displays the school inforamtion.-->
+  </head>
+
+  <body>
+    <!--Heading and subheading-->
+    <h2>School Request Form</h2>
+
+    <p>
+      Fill out the form and click submit. There is also information about these
+      schools below.
+    </p>
+
+    <!--school form-enter name-->
+    <form id="school-form" method="post" action="/backend/submit.php">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br />
+
+      <!--school form-enter grade-->
+      <label for="grade">Grade:</label>
+      <select id="grade" name="grade" required>
+        <option value="6">6th Grade</option>
+        <option value="7">7th Grade</option>
+        <option value="8">8th Grade</option></select
+      ><br />
+
+      <!--school form-enter age-->
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" /><br />
+
+      <!--school form-enter gender-->
+      <fieldset>
+        <legend>Gender:</legend>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          class="regular-radio"
+        />
+        <label class="label" for="male">Male</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          class="regular-radio"
+        />
+        <label class="label" for="female">Female</label><br />
+      </fieldset>
+
+      <!--school form-enter School from drop down menu-->
+      <label for="school">School:</label>
+      <select id="school" name="school" required>
+        <option value="">School</option>
+        <option value="wellington_landings">Wellington Landings</option>
+        <option value="polo_park">Polo Park</option>
+        <option value="emerald_cove">Emerald Cove</option></select
+      ><br />
+
+      <!--school form-enter email-->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <!--button to submit form-->
+      <button id="submit-btn">Submit</button>
+    </form>
+    <br /><br />
+
+    <!--Accordion for school information-->
+    <div class="accordion">
+      <button
+        class="accordion-button"
+        onclick="toggleAccordion('wellington-landings')"
+      >
+        Wellington Landings
+      </button>
+      <div class="accordion-panel" id="wellington-landings">
+        <p>
+          Wellington Landings Middle School is a highly rated, public school
+          located in WELLINGTON, FL. It has 1,259 students in grades 6-8 with a
+          student-teacher ratio of 19 to 1. According to state test scores, 82%
+          of students are at least proficient in math and 76% in reading.
+        </p>
+      </div>
+
+      <button class="accordion-button" onclick="toggleAccordion('polo-park')">
+        Polo Park
+      </button>
+      <div class="accordion-panel" id="polo-park">
+        <p>
+          Polo Park Middle School is a highly rated, public school located in
+          WELLINGTON, FL. It has 1,281 students in grades 6-8 with a
+          student-teacher ratio of 19 to 1. According to state test scores, 78%
+          of students are at least proficient in math and 72% in reading.
+        </p>
+      </div>
+
+      <button
+        class="accordion-button"
+        onclick="toggleAccordion('emerald-cove')"
+      >
+        Emerald Cove
+      </button>
+      <div class="accordion-panel" id="emerald-cove">
+        <p>
+          Emerald Cove Middle School is a highly rated, public school located in
+          WELLINGTON, FL. It has 1,281 students in grades 6-8 with a
+          student-teacher ratio of 18 to 1. According to state test scores, 74%
+          of students are at least proficient in math and 67% in reading.
+        </p>
+      </div>
+    </div>
+
+    <!--Javascript for the accordion of school information-->
+    <script>
+      function toggleAccordion(panelId) {
+        const panel = document.getElementById(panelId);
+        panel.classList.toggle("show");
+      }
+    </script>
+
+    <!--Javascript for the submit button and confirmation pop up-->
+    <script>
+      const form = document.getElementById("school-form");
+      const submitBtn = document.getElementById("submit-btn");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // Code to send form data to backend
+        alert("Form submitted successfully!");
+      });
+    </script>
+  </body>
+</html>
