@@ -76,6 +76,28 @@
             Test your knowledge of Spongebob Facts. When your done, click
             Submit.
           </h2>
+          <!--Positive Encouragement-->
+          <button onclick="generatePraise()">
+            Click here for some positivity!
+          </button>
+          <p id="praise"></p>
+
+          <script>
+            const praises = [
+              "You're amazing!",
+              "You're a rockstar!",
+              "You're a genius!",
+              "You're a superhero!",
+              "You're the best!",
+            ];
+
+            function generatePraise() {
+              const randomIndex = Math.floor(Math.random() * praises.length);
+              const praiseElement = document.getElementById("praise");
+              praiseElement.innerText = praises[randomIndex];
+            }
+          </script>
+
           <!--Quiz in a form-->
           <div id="quiz-form">
             <form
